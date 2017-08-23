@@ -5,13 +5,14 @@ import android.support.v7.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.Toast
 
+import kotlinx.android.synthetic.main.activity_main.*
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val txt1 = findViewById(R.id.txt1) as TextView
-        txt1.setOnClickListener { Toast.makeText(this@MainActivity, R.string.greeting, Toast.LENGTH_SHORT).show() }
+        message.text = R.string.greeting.toString()
+        message.setOnClickListener { Toast.makeText(this@MainActivity, R.string.greeting, Toast.LENGTH_SHORT).show() }
     }
 }
