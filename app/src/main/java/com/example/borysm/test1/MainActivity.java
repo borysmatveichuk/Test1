@@ -3,10 +3,17 @@ package com.example.borysm.test1;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Pair;
 import android.widget.TextView;
 
 import com.example.borysm.test1.data.DataManager;
 import com.example.borysm.test1.data.model.User;
+import com.example.borysm.test1.di.component.ActivityComponent;
+import com.example.borysm.test1.di.component.DaggerActivityComponent;
+import com.example.borysm.test1.di.module.ActivityModule;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -20,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mTvUserInfo;
     private TextView mTvAccessToken;
+
+    private Map<Integer, Pair<String, String>> colors = new HashMap<>();
 
     public ActivityComponent getActivityComponent() {
         if (activityComponent == null) {
@@ -40,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTvUserInfo = (TextView) findViewById(R.id.tv_user_info);
         mTvAccessToken = (TextView) findViewById(R.id.tv_access_token);
+        colors.put(1, new Pair<>("222", "222"));
     }
 
     @Override

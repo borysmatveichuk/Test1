@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.example.borysm.test1.data.DataManager;
 import com.example.borysm.test1.di.component.ApplicationComponent;
+import com.example.borysm.test1.di.component.DaggerApplicationComponent;
 import com.example.borysm.test1.di.module.ApplicationModule;
 
 import javax.inject.Inject;
